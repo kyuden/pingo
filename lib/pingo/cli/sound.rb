@@ -2,7 +2,14 @@ require 'thor'
 
 module Pingo
   class CLI < Thor
-    desc "IPHONE_MODEL(ex 5, 5s)", "sound iphone"
+    desc "[MODEL_NAME]", "Sound apple device"
+    long_desc <<-LONGDESC
+      `pingo [MODEL_NAME]` will sound your apple device.
+
+      ex) when iphone 5s
+      \x5> $ pingo 5s
+    LONGDESC
+
     def pingo(device_name)
       Pingo.run(device_name)
     end
