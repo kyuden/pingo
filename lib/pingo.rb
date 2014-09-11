@@ -1,5 +1,5 @@
 require "pingo/version"
-require "pingo/cli/sound"
+require "pingo/cli"
 require "json"
 require "typhoeus"
 
