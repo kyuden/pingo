@@ -34,7 +34,15 @@ module Pingo
       end
 
       def parse_device_id(data)
-        JSON.parse(data.body)['content'].each { |params| return params["id"] if match_device?(params) }
+        target_content(data) ? target_content(data)["id"] : nil
+      end
+
+      def target_content(data)
+        @target_content ||= contents(data).find { |content| match_device?(content) }
+      end
+
+      def contents(data)
+        JSON.parse(data.body)['content']
       end
 
       def match_device?(params)
