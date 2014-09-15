@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://invalid%40sample.com:invalid_pass@fmipmobile.icloud.com/fmipservice/device/invalid@sample.com/initClient
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Apple-Find-Api-Ver:
+      - '2.0'
+      X-Apple-Authscheme:
+      - UserIdGuest
+      X-Apple-Realm-Support:
+      - '1.0'
+      Accept-Language:
+      - en-us
+      Useragent:
+      - Pingo
+      Connection:
+      - keep-alive
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      X-Responding-Instance:
+      - fmipservice-20300101-nk11p03me-fmipservice001-8001-14F41
+      X-Request-Uuid:
+      - 7e28f0d9-8d01-4448-b29a-0ee51799f4a3-initClient
+      X-Responding-Server:
+      - nk11p03me-fmipservice001_001
+      X-Responding-Partition:
+      - p03
+      Content-Length:
+      - '50'
+      Date:
+      - Mon, 15 Sep 2014 04:04:39 GMT
+      Server:
+      - Apple-iCloud
+      Set-Cookie:
+      - NSC_q03-gnjqtfswjdf=ffffffff1296105145525d5f4f58455e445a4a422971;path=/;secure;httponly
+    body:
+      encoding: UTF-8
+      string: '{"desc":"default text from ResponseContentFilter"}'
+    http_version:
+  recorded_at: Mon, 15 Sep 2014 04:04:40 GMT
+recorded_with: VCR 2.9.3
