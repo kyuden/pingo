@@ -46,7 +46,7 @@ module Pingo
       end
 
       def match_device?(params)
-        params['location'] && params['deviceDisplayName'] =~ /#{@model_name}$/
+        params['location'] && params['deviceDisplayName'] =~ /#{@model_name}$/i
       end
 
       def play_sound
