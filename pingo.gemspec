@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Pingo::VERSION
   spec.authors       = ["Kyuden"]
   spec.email         = ["msmsms.um@gmail.com"]
-  spec.summary       = %q{Write a short summary. Required.}
-  spec.description   = %q{Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Simple CLI tool for find iphone.}
+  spec.description   = %q{Pingo provides a simple command for sounding your iphone.}
+  spec.homepage      = "https://github.com/Kyuden/pingo"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
