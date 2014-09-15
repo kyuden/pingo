@@ -1,4 +1,4 @@
-# Pingo
+# Pingo [![Gem Version](https://badge.fury.io/rb/pingo.svg)](http://badge.fury.io/rb/pingo) [![Code Climate](https://codeclimate.com/github/Kyuden/pingo/badges/gpa.svg)](https://codeclimate.com/github/Kyuden/pingo)
 
 Pingo provide a scatterbrain with a `pingo` command of sounding your iphone.
 
