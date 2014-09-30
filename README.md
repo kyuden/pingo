@@ -38,6 +38,8 @@ Example:
 ```
 # when iphone 5s
 pingo 5s
+# when iphone 6 Plus
+pingo 6.Plus
 ```
 
 ## Contributing
