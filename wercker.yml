@@ -3,7 +3,7 @@ box: wercker/rvm
 build:
     steps:
         - rvm-use:
-            version: 2.1.0
+            version: 2.1.3
 
         - script:
             name: gem install bundler
