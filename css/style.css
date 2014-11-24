@@ -681,7 +681,7 @@ hr.separator-alt {
         font-size: 13px;
     }
     .code-screen pre {
-        font-size: 5px;
+        font-size: 10px;
     }
 
     .green-tooltip + .tooltip > .tooltip-inner {
