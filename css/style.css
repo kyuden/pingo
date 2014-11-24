@@ -641,10 +641,12 @@ hr.separator-alt {
         margin-bottom: 50px;
     }
     #hero h1, h1, .h1 {
-        font-size: 32px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 45px;
     }
     #hero img {
-        margin-top: 80px;
+        margin-top: 0px;
     }
     #features, #image, #about, #video, #testimonials, #purchase, #gallery, #social, #subscribe {
         padding-top: 50px;
@@ -655,6 +657,14 @@ hr.separator-alt {
     }
     #owl-demo .item img {
         height: 100%;
+    }
+
+    #hero .lead {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    #twitter-widget-0 {
+        width: 110px !important;
     }
     .social-icon {
         border-radius: 50%;
@@ -667,6 +677,13 @@ hr.separator-alt {
         width: 30px;
         padding: 5px;
     }
+    ol li {
+        font-size: 13px;
+    }
+    .code-screen pre {
+        font-size: 5px;
+    }
+
     .green-tooltip + .tooltip > .tooltip-inner {
         padding: 5px;
     }
