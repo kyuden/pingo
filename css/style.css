@@ -633,7 +633,7 @@ hr.separator-alt {
     }
 
     .profile {
-      margin-top: 20px;
+      margin: 30px;
     }
 }
 @media (min-width: 361px) and (max-width: 767px) {
@@ -655,7 +655,7 @@ hr.separator-alt {
       }
 
       .profile {
-        margin-top: 20px;
+        margin: 30px;
       }
     }
 @media (min-width: 320px) and (max-width: 360px) {
@@ -726,6 +726,9 @@ hr.separator-alt {
     .btn-wide {
         padding: 15px 50px;
     }
+    .profile {
+      margin: 30px;
+    }
 }
 @media (width: 1024px) {
     #hero img {
@@ -789,5 +792,4 @@ hr.separator-alt {
 @media (width: 360px) {
     #gallery #owl-demo .item {
         padding-left: 15px;
-    }
 }
