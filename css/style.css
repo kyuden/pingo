@@ -631,11 +631,37 @@ hr.separator-alt {
         font-size: 18px;
         margin-bottom: 25px;
     }
+
+    .profile {
+      margin-top: 20px;
+    }
 }
+@media (min-width: 361px) and (max-width: 767px) {
+      #hero {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        }
+
+      #hero h1, h1, .h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 45px;
+      }
+
+      #hero .lead {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .profile {
+        margin-top: 20px;
+      }
+    }
 @media (min-width: 320px) and (max-width: 360px) {
     #hero {
         padding-top: 20px;
-        padding-bottom: 50px;
+        padding-bottom: 20px;
     }
     #hero .logo {
         margin-bottom: 50px;
@@ -662,6 +688,7 @@ hr.separator-alt {
     #hero .lead {
         font-size: 11px;
         margin-top: 10px;
+        margin-bottom: 20px;
     }
     #twitter-widget-0 {
         width: 110px !important;
