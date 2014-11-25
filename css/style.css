@@ -102,6 +102,9 @@ header {
 .code-screen .comment {
   color: #ccc;
 }
+.code-screen .method {
+  color: #FF000D;
+}
 .blinking {
   font-weight: 900;
   animation: blinking 1s infinite;
