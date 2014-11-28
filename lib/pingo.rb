@@ -13,7 +13,7 @@ module Pingo
         new(model_name).instance_eval do
           partition  = request_partition
           device_ids = request_device_ids(partition)
-          device_ids.each { |device_id| request_sound(partition, device_id) } unless device_ids.empty?
+          request_sound(partition, device_ids)
         end
       end
     end
@@ -30,6 +30,7 @@ module Pingo
       end
 
       def request_device_ids(partition)
+        raise "partition is nil" unless partition
         parse_device_ids(post(INIT_CLIENT, partition))
       end
 
@@ -49,8 +50,10 @@ module Pingo
         params['deviceDisplayName'] =~ /#{@model_name}$/i
       end
 
-      def request_sound(partition, device_id)
-        post(PLAY_SOUND, partition, generate_body(device_id))
+      def request_sound(partition, device_ids)
+        raise "partition is nil" unless partition
+        raise "device id is nil" if Array(device_ids).empty?
+        Array(device_ids).each { |device_id| post(PLAY_SOUND, partition, generate_body(device_id)) }
       end
 
       def generate_body(device_id)
