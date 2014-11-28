@@ -11,9 +11,9 @@ module Pingo
     class << self
       def run(model_name)
         new(model_name).instance_eval do
-          @partition = request_partition
-          device_ids = request_device_ids
-          device_ids.each { |device_id| request_sound(device_id) } unless device_ids.empty?
+          partition  = request_partition
+          device_ids = request_device_ids(partition)
+          device_ids.each { |device_id| request_sound(partition, device_id) } unless device_ids.empty?
         end
       end
     end
@@ -29,8 +29,8 @@ module Pingo
         post(INIT_CLIENT).headers['X-Apple-MMe-Host']
       end
 
-      def request_device_ids
-        parse_device_ids(post(INIT_CLIENT))
+      def request_device_ids(partition)
+        parse_device_ids(post(INIT_CLIENT, partition))
       end
 
       def parse_device_ids(data)
@@ -49,8 +49,8 @@ module Pingo
         params['deviceDisplayName'] =~ /#{@model_name}$/i
       end
 
-      def request_sound(device_id)
-        post(PLAY_SOUND, generate_body(device_id))
+      def request_sound(partition, device_id)
+        post(PLAY_SOUND, partition, generate_body(device_id))
       end
 
       def generate_body(device_id)
@@ -69,8 +69,8 @@ module Pingo
         }
       end
 
-      def post(mode, body=nil)
-        Typhoeus::Request.post(uri(mode), userpwd: "#{@username}:#{@password}", headers: post_headers, followlocation: true, verbose: true, maxredirs: 1, body: body)
+      def post(mode, partition="fmipmobile.icloud.com", body=nil)
+        Typhoeus::Request.post(uri(mode, partition), userpwd: "#{@username}:#{@password}", headers: post_headers, followlocation: true, verbose: true, maxredirs: 1, body: body)
       end
 
       def post_headers
@@ -85,12 +85,8 @@ module Pingo
           }
       end
 
-      def uri(mode)
-        @partition ? "https://#{@partition}/#{base_uri}/#{mode}" : "https://fmipmobile.icloud.com/#{base_uri}/#{mode}"
-      end
-
-      def base_uri
-        "fmipservice/device/#{@username}"
+      def uri(mode, partition)
+        "https://#{partition}/fmipservice/device/#{@username}/#{mode}"
       end
   end
 end
