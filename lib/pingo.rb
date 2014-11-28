@@ -11,9 +11,9 @@ module Pingo
     class << self
       def run(model_name)
         new(model_name).instance_eval do
-          @partition = get_partition
-          device_ids = get_device_ids
-          device_ids.each { |device_id| play_sound(device_id) } unless device_ids.empty?
+          @partition = request_partition
+          device_ids = request_device_ids
+          device_ids.each { |device_id| request_sound(device_id) } unless device_ids.empty?
         end
       end
     end
@@ -25,11 +25,11 @@ module Pingo
     end
 
     private
-      def get_partition
+      def request_partition
         post(INIT_CLIENT).headers['X-Apple-MMe-Host']
       end
 
-      def get_device_ids
+      def request_device_ids
         parse_device_ids(post(INIT_CLIENT))
       end
 
@@ -49,15 +49,15 @@ module Pingo
         params['deviceDisplayName'] =~ /#{@model_name}$/i
       end
 
-      def play_sound(device_id)
+      def request_sound(device_id)
         post(PLAY_SOUND, generate_body(device_id))
       end
 
       def generate_body(device_id)
-        JSON.generate(play_sound_body(device_id))
+        JSON.generate(sound_body(device_id))
       end
 
-      def play_sound_body(device_id)
+      def sound_body(device_id)
         {
           clientContext: {
             appName: 'FindMyiPhone',
