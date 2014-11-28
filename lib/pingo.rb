@@ -12,8 +12,8 @@ module Pingo
       def run(model_name)
         new(model_name).instance_eval do
           @partition = get_partition
-          @device_id = get_device_id
-          play_sound
+          device_ids = get_device_ids
+          device_ids.each { |device_id| play_sound(device_id) } unless device_ids.empty?
         end
       end
     end
@@ -29,16 +29,16 @@ module Pingo
         post(INIT_CLIENT).headers['X-Apple-MMe-Host']
       end
 
-      def get_device_id
-        parse_device_id(post(INIT_CLIENT))
+      def get_device_ids
+        parse_device_ids(post(INIT_CLIENT))
       end
 
-      def parse_device_id(data)
-        target_content(data) ? target_content(data)["id"] : nil
+      def parse_device_ids(data)
+        target_contents(data).map { |content| content["id"] }
       end
 
-      def target_content(data)
-        @target_content ||= contents(data).find { |content| match_device?(content) }
+      def target_contents(data)
+        contents(data).find_all { |content| match_device?(content) }
       end
 
       def contents(data)
@@ -46,25 +46,25 @@ module Pingo
       end
 
       def match_device?(params)
-        params['location'] && params['deviceDisplayName'] =~ /#{@model_name}$/i
+        params['deviceDisplayName'] =~ /#{@model_name}$/i
       end
 
-      def play_sound
-        post(PLAY_SOUND, generate_body)
+      def play_sound(device_id)
+        post(PLAY_SOUND, generate_body(device_id))
       end
 
-      def generate_body
-        JSON.generate(play_sound_body)
+      def generate_body(device_id)
+        JSON.generate(play_sound_body(device_id))
       end
 
-      def play_sound_body
+      def play_sound_body(device_id)
         {
           clientContext: {
             appName: 'FindMyiPhone',
             appVersion:  '2.0.2',
             shouldLocate: false,
           },
-          device: @device_id,
+          device: device_id,
           subject: "Pingo"
         }
       end
