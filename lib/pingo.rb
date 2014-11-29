@@ -73,7 +73,13 @@ module Pingo
       end
 
       def post(mode, partition="fmipmobile.icloud.com", body=nil)
-        Typhoeus::Request.post(uri(mode, partition), userpwd: "#{@username}:#{@password}", headers: post_headers, followlocation: true, verbose: true, maxredirs: 1, body: body)
+        Typhoeus::Request.post(uri(mode, partition),
+                               userpwd: "#{@username}:#{@password}",
+                               headers: post_headers,
+                               followlocation: true,
+                               verbose: true,
+                               maxredirs: 1,
+                               body: body)
       end
 
       def post_headers
