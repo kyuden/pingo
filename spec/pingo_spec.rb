@@ -5,7 +5,7 @@ describe Pingo do
     expect(Pingo::VERSION).not_to be_nil
   end
 
-  describe ".get_partiotion" do
+  describe "#request_partition" do
     subject { Pingo::Pingo.new("5s") }
 
     context 'valid APPLE_ID and APPLE_PASSWORD in ENV' do
@@ -13,7 +13,7 @@ describe Pingo do
 
       it 'should return partition' do
         VCR.use_cassette 'init_client/partition/valid_interaction' do
-          expect(subject.send(:get_partition)).not_to be_nil
+          expect(subject.send(:request_partition)).not_to be_nil
         end
       end
     end
@@ -23,13 +23,13 @@ describe Pingo do
 
       it 'should not return partition' do
         VCR.use_cassette 'init_client/partition/invalid_interaction' do
-          expect(subject.send(:get_partition)).to be_nil
+          expect(subject.send(:request_partition)).to be_nil
         end
       end
     end
   end
 
-  describe ".get_device_id" do
+  describe "#request_device_ids" do
     before { set_valid_env }
     let!(:pingo) { Pingo::Pingo.new(model_name) }
 
@@ -38,10 +38,10 @@ describe Pingo do
 
       it 'should return device_id' do
         VCR.use_cassette 'init_client/partition/valid_interaction' do
-          pingo.instance_variable_set(:@partition, pingo.send(:get_partition))
+          partition = pingo.send(:request_partition)
 
           VCR.use_cassette 'init_client/device_id/valid_interaction' do
-            expect(pingo.send(:get_device_id)).not_to be_nil
+            expect(pingo.send(:request_device_ids, partition)).not_to be_nil
           end
         end
       end
@@ -52,35 +52,35 @@ describe Pingo do
 
       it 'should not return device_id' do
         VCR.use_cassette 'init_client/partition/valid_interaction' do
-          pingo.instance_variable_set(:@partition, pingo.send(:get_partition))
+          partition = pingo.send(:request_partition)
 
           VCR.use_cassette 'init_client/device_id/invalid_interaction' do
-            expect(pingo.send(:get_device_id)).to be_nil
+            expect(pingo.send(:request_device_ids, partition)).to eq([])
           end
         end
       end
     end
   end
 
-  describe ".play_sound" do
+  describe "#request_sound" do
     before { set_valid_env }
     let!(:pingo) { Pingo::Pingo.new("5s") }
 
     context 'valid device_id' do
-      before do
-        pingo.instance_variable_set(:@device_id, nil)
-      end
-
       it 'should return 200 of status code' do
         VCR.use_cassette 'init_client/partition/valid_interaction' do
-          pingo.instance_variable_set(:@partition, pingo.send(:get_partition))
+          partition = pingo.send(:request_partition)
 
           VCR.use_cassette 'init_client/device_id/valid_interaction' do
-            pingo.instance_variable_set(:@device_id, pingo.send(:get_device_id))
+            device_ids = pingo.send(:request_device_ids, partition)
 
             VCR.use_cassette 'play_sound/valid_interaction' do
-              response = pingo.send(:play_sound)
-              expect([response.code, response.response_code]).to include(200)
+              responses = pingo.send(:request_sound, partition, device_ids)
+
+              responses.each do |response|
+                # VCR response structure and typhoeus it are differ even
+                expect([response.code, response.response_code]).to include(200)
+              end
             end
           end
         end
@@ -88,22 +88,22 @@ describe Pingo do
     end
 
     context 'invalid device_id' do
-      before do
-        pingo.instance_variable_set(:@device_id, nil)
-      end
+      let!(:device_ids) { "invalid device id" }
 
       it 'should return 500 of status code' do
         VCR.use_cassette 'init_client/partition/valid_interaction' do
-          pingo.instance_variable_set(:@partition, pingo.send(:get_partition))
+          partition = pingo.send(:request_partition)
 
           VCR.use_cassette 'init_client/device_id/valid_interaction' do
-            pingo.send(:get_device_id)
+            pingo.send(:request_device_ids, partition)
 
             VCR.use_cassette 'play_sound/invalid_interaction' do
-              response = pingo.send(:play_sound)
+              responses = pingo.send(:request_sound, partition, device_ids)
 
-              # VCR response structure and typhoeus it are differ even
-              expect([response.code, response.response_code]).to include(500)
+              responses.each do |response|
+                # VCR response structure and typhoeus it are differ even
+                expect([response.code, response.response_code]).to include(500)
+              end
             end
           end
         end
