@@ -5,15 +5,7 @@ Pingo provide a scatterbrain with a `pingo` command of sounding your iphone.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'pingo'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install pingo
 
@@ -39,6 +31,8 @@ Example:
 ```
 # when iphone 5s
 pingo 5s
+# when iphone 6
+pingo 6
 # when iphone 6 Plus
 pingo 6.Plus
 ```
