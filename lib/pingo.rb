@@ -53,7 +53,7 @@ module Pingo
       def request_sound(partition, device_ids)
         raise "partition is nil" unless partition
         raise "device id is nil" if Array(device_ids).empty?
-        Array(device_ids).each { |device_id| post(PLAY_SOUND, partition, generate_body(device_id)) }
+        Array(device_ids).map { |device_id| post(PLAY_SOUND, partition, generate_body(device_id)) }
       end
 
       def generate_body(device_id)
