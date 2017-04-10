@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://fmipmobile.icloud.com/fmipservice/device/invalid@sample.com/initClient
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Apple-Find-Api-Ver:
+      - '2.0'
+      X-Apple-Authscheme:
+      - UserIdGuest
+      X-Apple-Realm-Support:
+      - '1.0'
+      Accept-Language:
+      - en-us
+      Useragent:
+      - Pingo
+      Connection:
+      - keep-alive
+      Expect:
+      - ''
+      Authorization:
+      - Basic aW52YWxpZEBzYW1wbGUuY29tOmludmFsaWRfcGFzcw==
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - AppleHttpServer/1dad28f
+      Date:
+      - Mon, 10 Apr 2017 00:49:03 GMT
+      Content-Length:
+      - '50'
+      Connection:
+      - keep-alive
+      X-Responding-Instance:
+      - fmipservice:10900603:st11p09me-fmipservice006:8003:17B115:3150bfb
+      X-Responding-Server:
+      - st11p09me-fmipservice006_003
+      X-Responding-Partition:
+      - p09
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Set-Cookie:
+      - NSC_q09-gnjqtfswjdf=5e4fa3cf8c8475896259fb91a6dbeba4c28582d353494f85b4c873b38438ced5045a442d;path=/;secure;httponly
+      Via:
+      - icloudedge:ty09p00ic-zteu021217:7401:17B51:Tokyo
+      X-Apple-Request-Uuid:
+      - de22d605-681a-4537-88ea-8905fe82d6db
+      Access-Control-Expose-Headers:
+      - Via
+      - X-Apple-Request-UUID
+    body:
+      encoding: UTF-8
+      string: '{"desc":"default text from ResponseContentFilter"}'
+    http_version: 
+  recorded_at: Mon, 10 Apr 2017 00:49:03 GMT
+recorded_with: VCR 3.0.3

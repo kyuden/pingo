@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Pingo
   class CLI < Thor
     desc "[MODEL_NAME]", "Sound apple device"
@@ -9,7 +11,7 @@ module Pingo
     LONGDESC
 
     def pingo(model_name)
-      Pingo.run(model_name)
+      Client.run(model_name)
     end
   end
 end

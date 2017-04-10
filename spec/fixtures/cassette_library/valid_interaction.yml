@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://fmipmobile.icloud.com/fmipservice/device/valid@sample.com/initClient
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Apple-Find-Api-Ver:
+      - '2.0'
+      X-Apple-Authscheme:
+      - UserIdGuest
+      X-Apple-Realm-Support:
+      - '1.0'
+      Accept-Language:
+      - en-us
+      Useragent:
+      - Pingo
+      Connection:
+      - keep-alive
+      Expect:
+      - ''
+      Authorization:
+      - Basic bXNtc21uLnVtQGdtYWlsLmNvbTpoaXNhZGE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - AppleHttpServer/1dad28f
+      Date:
+      - Mon, 10 Apr 2017 00:48:59 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Responding-Instance:
+      - fmipservice:35200301:mr90p52ic-tyeg01133301:8001:17B115:3150bfb
+      X-Responding-Server:
+      - mr90p52ic-tyeg01133301_001
+      X-Responding-Partition:
+      - p52
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Set-Cookie:
+      - NSC_q52-gnjqtfswjdf=5977a3cd2e44c8521f25326de4931ecd82e77d71f2c0355bc600e07d60085a3fd6cc12d8;path=/;secure;httponly
+      Via:
+      - icloudedge:ty09p00ic-zteu021217:7401:17B51:Tokyo
+      X-Apple-Request-Uuid:
+      - 899ff70a-cb8a-4de6-8252-0553e218b641
+      Access-Control-Expose-Headers:
+      - Via
+      - X-Apple-Request-UUID
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ1c2VySW5mbyI6eyJmaXJzdE5hbWUiOiLnnJ/lr5siLCJsYXN0TmFtZSI6IuS5heeUsCIsIm1lbWJlcnNJbmZvIjpudWxsLCJoYXNNZW1iZXJzIjpmYWxzZX0sInNlcnZlckNvbnRleHQiOnsibWluQ2FsbGJhY2tJbnRlcnZhbEluTVMiOjUwMDAsImVuYWJsZTJGQUZhbWlseUFjdGlvbnMiOmZhbHNlLCJwcmVmZXJyZWRMYW5ndWFnZSI6ImphLWpwIiwibGFzdFNlc3Npb25FeHRlbnNpb25UaW1lIjpudWxsLCJlbmFibGVNYXBTdGF0cyI6dHJ1ZSwiY2FsbGJhY2tJbnRlcnZhbEluTVMiOjIwMDAsInZhbGlkUmVnaW9uIjp0cnVlLCJ0aW1lem9uZSI6eyJjdXJyZW50T2Zmc2V0IjotMjUyMDAwMDAsInByZXZpb3VzVHJhbnNpdGlvbiI6MTQ4OTMxMjc5OTk5OSwicHJldmlvdXNPZmZzZXQiOi0yODgwMDAwMCwidHpDdXJyZW50TmFtZSI6Ii0wNzowMCIsInR6TmFtZSI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMifSwiYXV0aFRva2VuIjoiQVFBQUFBQlk2dFo2Y0UyLUF0UUtSbHdlUUlWekpvUjVZVk52QkRZfiIsIm1heENhbGxiYWNrSW50ZXJ2YWxJbk1TIjo2MDAwMCwiY2xhc3NpY1VzZXIiOmZhbHNlLCJpc0hTQSI6ZmFsc2UsInRyYWNrSW5mb0NhY2hlRHVyYXRpb25JblNlY3MiOjg2NDAwLCJpbWFnZUJhc2VVcmwiOiJodHRwczovL3N0YXRpY2kuaWNsb3VkLmNvbSIsIm1pblRyYWNrTG9jVGhyZXNob2xkSW5NdHMiOjEwMCwibWF4TG9jYXRpbmdUaW1lIjo5MDAwMCwic2Vzc2lvbkxpZmVzcGFuIjo5MDAwMDAsImluZm8iOiJvZ1NXMjg0bURGcHpiN0NTczc0a2lNMExKWnVzRGFJMVJKeDRRMUtlaFpjOTVqSnNudUoreTdHN2M5T2I0OTFGIiwicHJlZnNVcGRhdGVUaW1lIjoxNDExMTk4NTEwMTUzLCJ1c2VBdXRoV2lkZ2V0Ijp0cnVlLCJjbGllbnRJZCI6IlpHVjJhV05sWHpFd05qWXpNVEE1TnpKZk1UUTVNVGM0TlRNek9Ea3pPQT09IiwiZW5hYmxlMkZBRmFtaWx5UmVtb3ZlIjpmYWxzZSwic2VydmVyVGltZXN0YW1wIjoxNDkxNzg1MzM4OTQ1LCJtYWNDb3VudCI6MCwiZGV2aWNlTG9hZFN0YXR1cyI6IjIwMCIsIm1heERldmljZUxvYWRUaW1lIjo2MDAwMCwicHJzSWQiOjEwNjYzMTA5NzIsInNob3dTbGxOb3ciOmZhbHNlLCJjbG91ZFVzZXIiOnRydWUsImVuYWJsZTJGQUVyYXNlIjpmYWxzZX0sImFsZXJ0IjpudWxsLCJ1c2VyUHJlZmVyZW5jZXMiOnsidG91Y2hQcmVmcyI6e319LCJjb250ZW50IjpbeyJtc2ciOm51bGwsImNhbldpcGVBZnRlckxvY2siOmZhbHNlLCJ3aXBlSW5Qcm9ncmVzcyI6ZmFsc2UsImxvc3RNb2RlRW5hYmxlZCI6ZmFsc2UsImFjdGl2YXRpb25Mb2NrZWQiOmZhbHNlLCJwYXNzY29kZUxlbmd0aCI6NCwiZGV2aWNlU3RhdHVzIjoiMjAzIiwiZGV2aWNlQ29sb3IiOm51bGwsImZlYXR1cmVzIjp7Ik1TRyI6dHJ1ZSwiTE9DIjpmYWxzZSwiTExDIjpmYWxzZSwiQ0xLIjpmYWxzZSwiVEVVIjpmYWxzZSwiTE1HIjp0cnVlLCJTTkQiOnRydWUsIkNMVCI6ZmFsc2UsIkxLTCI6ZmFsc2UsIlNWUCI6ZmFsc2UsIkxTVCI6ZmFsc2UsIkxLTSI6dHJ1ZSwiV01HIjpmYWxzZSwiWFJNIjpmYWxzZSwiUElOIjp0cnVlLCJMQ0siOnRydWUsIlJFTSI6ZmFsc2UsIk1DUyI6ZmFsc2UsIkNXUCI6ZmFsc2UsIktFWSI6dHJ1ZSwiS1BEIjp0cnVlLCJXSVAiOnRydWV9LCJsb3dQb3dlck1vZGUiOmZhbHNlLCJyYXdEZXZpY2VNb2RlbCI6Ik1hY0Jvb2tBaXI1LDIiLCJpZCI6InM2VS9kTndtTU9nbEd6TklqVVZjUFJOdVRmQ09NbWRsQXQxbEhpeEl4UWxTMzA0MnUwdmhUUT09IiwicmVtb3RlTG9jayI6bnVsbCwiaXNMb2NhdGluZyI6ZmFsc2UsIm1vZGVsRGlzcGxheU5hbWUiOiJNYWNCb29rIEFpciIsImxvc3RUaW1lc3RhbXAiOiIiLCJiYXR0ZXJ5TGV2ZWwiOjAuMCwibWVzZyI6bnVsbCwibG9jYXRpb25FbmFibGVkIjpmYWxzZSwibG9ja2VkVGltZXN0YW1wIjpudWxsLCJsb2NGb3VuZEVuYWJsZWQiOmZhbHNlLCJzbmQiOm51bGwsImZtbHlTaGFyZSI6ZmFsc2UsImxvc3REZXZpY2UiOm51bGwsImxvc3RNb2RlQ2FwYWJsZSI6ZmFsc2UsIndpcGVkVGltZXN0YW1wIjpudWxsLCJkZXZpY2VEaXNwbGF5TmFtZSI6Ik1hY0Jvb2sgQWlyIDEzXCIiLCJwcnNJZCI6bnVsbCwiYXVkaW9DaGFubmVscyI6W10sImxvY2F0aW9uQ2FwYWJsZSI6dHJ1ZSwiYmF0dGVyeVN0YXR1cyI6IlVua25vd24iLCJ0cmFja2luZ0luZm8iOm51bGwsIm5hbWUiOiJreXVkZW4g44GuIE1hY0Jvb2sgQWlyIiwiaXNNYWMiOnRydWUsInRoaXNEZXZpY2UiOmZhbHNlLCJkZXZpY2VDbGFzcyI6Ik1hY0Jvb2tBaXIiLCJsb2NhdGlvbiI6bnVsbCwiZGV2aWNlTW9kZWwiOiJNYWNCb29rQWlyNV8yIiwibWF4TXNnQ2hhciI6NTAwLCJkYXJrV2FrZSI6ZmFsc2UsInJlbW90ZVdpcGUiOm51bGx9LHsibXNnIjp7InN0cm9iZSI6ZmFsc2UsInVzZXJUZXh0IjpmYWxzZSwicGxheVNvdW5kIjp0cnVlLCJ2aWJyYXRlIjp0cnVlLCJjcmVhdGVUaW1lc3RhbXAiOjE0OTE3ODUyMzAxMTQsInN0YXR1c0NvZGUiOiIyMDAifSwiY2FuV2lwZUFmdGVyTG9jayI6dHJ1ZSwid2lwZUluUHJvZ3Jlc3MiOmZhbHNlLCJsb3N0TW9kZUVuYWJsZWQiOmZhbHNlLCJhY3RpdmF0aW9uTG9ja2VkIjp0cnVlLCJwYXNzY29kZUxlbmd0aCI6NiwiZGV2aWNlU3RhdHVzIjoiMjAwIiwiZGV2aWNlQ29sb3IiOiJlMWU0ZTMtZDdkOWQ4IiwiZmVhdHVyZXMiOnsiTVNHIjp0cnVlLCJMT0MiOnRydWUsIkxMQyI6ZmFsc2UsIkNMSyI6ZmFsc2UsIlRFVSI6dHJ1ZSwiTE1HIjpmYWxzZSwiU05EIjp0cnVlLCJDTFQiOmZhbHNlLCJMS0wiOmZhbHNlLCJTVlAiOmZhbHNlLCJMU1QiOnRydWUsIkxLTSI6ZmFsc2UsIldNRyI6dHJ1ZSwiWFJNIjpmYWxzZSwiUElOIjpmYWxzZSwiTENLIjp0cnVlLCJSRU0iOmZhbHNlLCJNQ1MiOmZhbHNlLCJDV1AiOmZhbHNlLCJLRVkiOmZhbHNlLCJLUEQiOmZhbHNlLCJXSVAiOnRydWV9LCJsb3dQb3dlck1vZGUiOmZhbHNlLCJyYXdEZXZpY2VNb2RlbCI6ImlQaG9uZTYsMSIsImlkIjoidGVxZGJjQkp1RHZuaGpJOWw1dVJ4dkhzMzlnOHBmelRkaUM5LzlDWi9WNXVERTdkelkxbkQrSFlWTlNVem1XViIsInJlbW90ZUxvY2siOm51bGwsImlzTG9jYXRpbmciOnRydWUsIm1vZGVsRGlzcGxheU5hbWUiOiJpUGhvbmUiLCJsb3N0VGltZXN0YW1wIjoiIiwiYmF0dGVyeUxldmVsIjoxLjAsIm1lc2ciOm51bGwsImxvY2F0aW9uRW5hYmxlZCI6dHJ1ZSwibG9ja2VkVGltZXN0YW1wIjpudWxsLCJsb2NGb3VuZEVuYWJsZWQiOmZhbHNlLCJzbmQiOnsiY3JlYXRlVGltZXN0YW1wIjoxNDkxNzg1MjMwMTE0LCJzdGF0dXNDb2RlIjoiMjAwIn0sImZtbHlTaGFyZSI6ZmFsc2UsImxvc3REZXZpY2UiOm51bGwsImxvc3RNb2RlQ2FwYWJsZSI6dHJ1ZSwid2lwZWRUaW1lc3RhbXAiOm51bGwsImRldmljZURpc3BsYXlOYW1lIjoiaVBob25lIDVzIiwicHJzSWQiOm51bGwsImF1ZGlvQ2hhbm5lbHMiOltdLCJsb2NhdGlvbkNhcGFibGUiOnRydWUsImJhdHRlcnlTdGF0dXMiOiJDaGFyZ2VkIiwidHJhY2tpbmdJbmZvIjpudWxsLCJuYW1lIjoi5LmF55Sw55yf5a+bIiwiaXNNYWMiOmZhbHNlLCJ0aGlzRGV2aWNlIjpmYWxzZSwiZGV2aWNlQ2xhc3MiOiJpUGhvbmUiLCJsb2NhdGlvbiI6eyJpc09sZCI6ZmFsc2UsImlzSW5hY2N1cmF0ZSI6ZmFsc2UsImFsdGl0dWRlIjowLjAsInBvc2l0aW9uVHlwZSI6IkdQUyIsImxhdGl0dWRlIjozNS43MjM4NzA5MzIxNTc4MiwiZmxvb3JMZXZlbCI6MCwiaG9yaXpvbnRhbEFjY3VyYWN5IjoxMC4wLCJsb2NhdGlvblR5cGUiOm51bGwsInRpbWVTdGFtcCI6MTQ5MTc4NTIzNjc0MiwibG9jYXRpb25GaW5pc2hlZCI6dHJ1ZSwidmVydGljYWxBY2N1cmFjeSI6MC4wLCJsb25naXR1ZGUiOjEzOS44MjA4NDk5MzI4NjA0fSwiZGV2aWNlTW9kZWwiOiI1cy1lMWU0ZTMtZDdkOWQ4IiwibWF4TXNnQ2hhciI6MTYwLCJkYXJrV2FrZSI6ZmFsc2UsInJlbW90ZVdpcGUiOm51bGx9LHsibXNnIjpudWxsLCJjYW5XaXBlQWZ0ZXJMb2NrIjp0cnVlLCJ3aXBlSW5Qcm9ncmVzcyI6ZmFsc2UsImxvc3RNb2RlRW5hYmxlZCI6ZmFsc2UsImFjdGl2YXRpb25Mb2NrZWQiOmZhbHNlLCJwYXNzY29kZUxlbmd0aCI6NCwiZGV2aWNlU3RhdHVzIjoiMjAzIiwiZGV2aWNlQ29sb3IiOiJ3aGl0ZSIsImZlYXR1cmVzIjp7Ik1TRyI6dHJ1ZSwiTE9DIjp0cnVlLCJMTEMiOmZhbHNlLCJDTEsiOmZhbHNlLCJURVUiOnRydWUsIkxNRyI6ZmFsc2UsIlNORCI6dHJ1ZSwiQ0xUIjpmYWxzZSwiTEtMIjp0cnVlLCJTVlAiOmZhbHNlLCJMU1QiOnRydWUsIkxLTSI6ZmFsc2UsIldNRyI6ZmFsc2UsIlhSTSI6ZmFsc2UsIlBJTiI6ZmFsc2UsIkxDSyI6dHJ1ZSwiUkVNIjpmYWxzZSwiTUNTIjpmYWxzZSwiQ1dQIjpmYWxzZSwiS0VZIjp0cnVlLCJLUEQiOnRydWUsIldJUCI6dHJ1ZX0sImxvd1Bvd2VyTW9kZSI6ZmFsc2UsInJhd0RldmljZU1vZGVsIjoiaVBhZDMsMSIsImlkIjoibFQ2YXlBaE5VemVZWmFEZUdYd3RnQTlGUnpKckVUZ0RzaEovaEtaYUwyQWs3eTVyQ0NJM3hPSFlWTlNVem1XViIsInJlbW90ZUxvY2siOm51bGwsImlzTG9jYXRpbmciOnRydWUsIm1vZGVsRGlzcGxheU5hbWUiOiJpUGFkIiwibG9zdFRpbWVzdGFtcCI6IiIsImJhdHRlcnlMZXZlbCI6MC4wLCJtZXNnIjpudWxsLCJsb2NhdGlvbkVuYWJsZWQiOnRydWUsImxvY2tlZFRpbWVzdGFtcCI6bnVsbCwibG9jRm91bmRFbmFibGVkIjpmYWxzZSwic25kIjpudWxsLCJmbWx5U2hhcmUiOmZhbHNlLCJsb3N0RGV2aWNlIjpudWxsLCJsb3N0TW9kZUNhcGFibGUiOnRydWUsIndpcGVkVGltZXN0YW1wIjpudWxsLCJkZXZpY2VEaXNwbGF5TmFtZSI6ImlQYWQiLCJwcnNJZCI6bnVsbCwiYXVkaW9DaGFubmVscyI6W10sImxvY2F0aW9uQ2FwYWJsZSI6dHJ1ZSwiYmF0dGVyeVN0YXR1cyI6IlVua25vd24iLCJ0cmFja2luZ0luZm8iOm51bGwsIm5hbWUiOiJreXV1ZGVuIOOBriBpUGFkIiwiaXNNYWMiOmZhbHNlLCJ0aGlzRGV2aWNlIjpmYWxzZSwiZGV2aWNlQ2xhc3MiOiJpUGFkIiwibG9jYXRpb24iOm51bGwsImRldmljZU1vZGVsIjoiVGhpcmRHZW4td2hpdGUiLCJtYXhNc2dDaGFyIjoxNjAsImRhcmtXYWtlIjpmYWxzZSwicmVtb3RlV2lwZSI6bnVsbH0seyJtc2ciOnsic3Ryb2JlIjpmYWxzZSwidXNlclRleHQiOmZhbHNlLCJwbGF5U291bmQiOnRydWUsInZpYnJhdGUiOmZhbHNlLCJjcmVhdGVUaW1lc3RhbXAiOjEzOTQyNjM0NDg4MjYsInN0YXR1c0NvZGUiOiIyMDAifSwiY2FuV2lwZUFmdGVyTG9jayI6dHJ1ZSwid2lwZUluUHJvZ3Jlc3MiOmZhbHNlLCJsb3N0TW9kZUVuYWJsZWQiOmZhbHNlLCJhY3RpdmF0aW9uTG9ja2VkIjp0cnVlLCJwYXNzY29kZUxlbmd0aCI6NCwiZGV2aWNlU3RhdHVzIjoiMjAzIiwiZGV2aWNlQ29sb3IiOiJ3aGl0ZSIsImZlYXR1cmVzIjp7Ik1TRyI6dHJ1ZSwiTE9DIjp0cnVlLCJMTEMiOmZhbHNlLCJDTEsiOmZhbHNlLCJURVUiOnRydWUsIkxNRyI6ZmFsc2UsIlNORCI6dHJ1ZSwiQ0xUIjpmYWxzZSwiTEtMIjp0cnVlLCJTVlAiOmZhbHNlLCJMU1QiOnRydWUsIkxLTSI6ZmFsc2UsIldNRyI6dHJ1ZSwiWFJNIjpmYWxzZSwiUElOIjpmYWxzZSwiTENLIjp0cnVlLCJSRU0iOmZhbHNlLCJNQ1MiOmZhbHNlLCJDV1AiOmZhbHNlLCJLRVkiOnRydWUsIktQRCI6dHJ1ZSwiV0lQIjp0cnVlfSwibG93UG93ZXJNb2RlIjpmYWxzZSwicmF3RGV2aWNlTW9kZWwiOiJpUGhvbmU0LDEiLCJpZCI6ImsweVRKenBkOXduQzJTSTN0THBIajdvaDhVNTJTSVYxd0Z2alE1UXM1NEdCVGwwdTgzQzhGT0hZVk5TVXptV1YiLCJyZW1vdGVMb2NrIjpudWxsLCJpc0xvY2F0aW5nIjp0cnVlLCJtb2RlbERpc3BsYXlOYW1lIjoiaVBob25lIiwibG9zdFRpbWVzdGFtcCI6IiIsImJhdHRlcnlMZXZlbCI6MC4wLCJtZXNnIjpudWxsLCJsb2NhdGlvbkVuYWJsZWQiOnRydWUsImxvY2tlZFRpbWVzdGFtcCI6bnVsbCwibG9jRm91bmRFbmFibGVkIjpmYWxzZSwic25kIjp7ImNyZWF0ZVRpbWVzdGFtcCI6MTM5NDI2MzQ0ODgyNiwic3RhdHVzQ29kZSI6IjIwMCJ9LCJmbWx5U2hhcmUiOmZhbHNlLCJsb3N0RGV2aWNlIjpudWxsLCJsb3N0TW9kZUNhcGFibGUiOnRydWUsIndpcGVkVGltZXN0YW1wIjpudWxsLCJkZXZpY2VEaXNwbGF5TmFtZSI6ImlQaG9uZSA0cyIsInByc0lkIjpudWxsLCJhdWRpb0NoYW5uZWxzIjpbXSwibG9jYXRpb25DYXBhYmxlIjp0cnVlLCJiYXR0ZXJ5U3RhdHVzIjoiVW5rbm93biIsInRyYWNraW5nSW5mbyI6bnVsbCwibmFtZSI6IuS5heeUsOecn+WvmyIsImlzTWFjIjpmYWxzZSwidGhpc0RldmljZSI6ZmFsc2UsImRldmljZUNsYXNzIjoiaVBob25lIiwibG9jYXRpb24iOm51bGwsImRldmljZU1vZGVsIjoiRmlmdGhHZW4td2hpdGUiLCJtYXhNc2dDaGFyIjoxNjAsImRhcmtXYWtlIjpmYWxzZSwicmVtb3RlV2lwZSI6bnVsbH1dLCJzdGF0dXNDb2RlIjoiMjAwIn0=
+    http_version:
+  recorded_at: Mon, 10 Apr 2017 00:48:59 GMT
+- request:
+    method: post
+    uri: https://fmipmobile.icloud.com/fmipservice/device/valid@sample.com/playSound
+    body:
+      encoding: UTF-8
+      string: '{"clientContext":{"appName":"FindMyiPhone","appVersion":"2.0.2","shouldLocate":false},"device":"teqdbcBJuDvnhjI9l5uRxvHs39g8pfzTdiC9/9CZ/V5uDE7dzY1nD+HYVNSUzmWV","subject":"Pingo"}'
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Apple-Find-Api-Ver:
+      - '2.0'
+      X-Apple-Authscheme:
+      - UserIdGuest
+      X-Apple-Realm-Support:
+      - '1.0'
+      Accept-Language:
+      - en-us
+      Useragent:
+      - Pingo
+      Connection:
+      - keep-alive
+      Expect:
+      - ''
+      Authorization:
+      - Basic bXNtc21uLnVtQGdtYWlsLmNvbTpoaXNhZGE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - AppleHttpServer/1dad28f
+      Date:
+      - Mon, 10 Apr 2017 00:49:02 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Responding-Instance:
+      - fmipservice:35200204:mr90p52ic-tyeg01083401:8004:17B115:3150bfb
+      X-Responding-Server:
+      - mr90p52ic-tyeg01083401_004
+      X-Responding-Partition:
+      - p52
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Set-Cookie:
+      - NSC_q52-gnjqtfswjdf=28d4a3da7ceaff9fa5cfc9758694a666314b1a6ab4dccb7df36affc52b51a5f9c4536ffe;path=/;secure;httponly
+      Via:
+      - icloudedge:ty09p00ic-zteu021217:7401:17B51:Tokyo
+      X-Apple-Request-Uuid:
+      - 8895fa94-cc00-4e6b-ba16-4c5ac949c845
+      Access-Control-Expose-Headers:
+      - Via
+      - X-Apple-Request-UUID
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ1c2VySW5mbyI6bnVsbCwic2VydmVyQ29udGV4dCI6bnVsbCwiYWxlcnQiOm51bGwsInVzZXJQcmVmZXJlbmNlcyI6bnVsbCwiY29udGVudCI6W3sibXNnIjp7InN0cm9iZSI6ZmFsc2UsInVzZXJUZXh0IjpmYWxzZSwicGxheVNvdW5kIjp0cnVlLCJ2aWJyYXRlIjp0cnVlLCJjcmVhdGVUaW1lc3RhbXAiOjE0OTE3ODUzNDAzOTEsInN0YXR1c0NvZGUiOiIyMDAifSwiY2FuV2lwZUFmdGVyTG9jayI6dHJ1ZSwid2lwZUluUHJvZ3Jlc3MiOmZhbHNlLCJsb3N0TW9kZUVuYWJsZWQiOmZhbHNlLCJhY3RpdmF0aW9uTG9ja2VkIjp0cnVlLCJwYXNzY29kZUxlbmd0aCI6NiwiZGV2aWNlU3RhdHVzIjoiMjAwIiwiZGV2aWNlQ29sb3IiOiJlMWU0ZTMtZDdkOWQ4IiwiZmVhdHVyZXMiOnsiTVNHIjp0cnVlLCJMT0MiOnRydWUsIkxMQyI6ZmFsc2UsIkNMSyI6ZmFsc2UsIlRFVSI6dHJ1ZSwiTE1HIjpmYWxzZSwiU05EIjp0cnVlLCJDTFQiOmZhbHNlLCJMS0wiOmZhbHNlLCJTVlAiOmZhbHNlLCJMU1QiOnRydWUsIkxLTSI6ZmFsc2UsIldNRyI6dHJ1ZSwiWFJNIjpmYWxzZSwiUElOIjpmYWxzZSwiTENLIjp0cnVlLCJSRU0iOmZhbHNlLCJNQ1MiOmZhbHNlLCJDV1AiOmZhbHNlLCJLRVkiOmZhbHNlLCJLUEQiOmZhbHNlLCJXSVAiOnRydWV9LCJsb3dQb3dlck1vZGUiOmZhbHNlLCJyYXdEZXZpY2VNb2RlbCI6ImlQaG9uZTYsMSIsImlkIjoidGVxZGJjQkp1RHZuaGpJOWw1dVJ4dkhzMzlnOHBmelRkaUM5LzlDWi9WNXVERTdkelkxbkQrSFlWTlNVem1XViIsInJlbW90ZUxvY2siOm51bGwsImlzTG9jYXRpbmciOnRydWUsIm1vZGVsRGlzcGxheU5hbWUiOiJpUGhvbmUiLCJsb3N0VGltZXN0YW1wIjoiIiwiYmF0dGVyeUxldmVsIjoxLjAsIm1lc2ciOm51bGwsImxvY2F0aW9uRW5hYmxlZCI6dHJ1ZSwibG9ja2VkVGltZXN0YW1wIjpudWxsLCJsb2NGb3VuZEVuYWJsZWQiOmZhbHNlLCJzbmQiOnsiY3JlYXRlVGltZXN0YW1wIjoxNDkxNzg1MzQwMzkxLCJzdGF0dXNDb2RlIjoiMjAwIn0sImZtbHlTaGFyZSI6ZmFsc2UsImxvc3REZXZpY2UiOm51bGwsImxvc3RNb2RlQ2FwYWJsZSI6dHJ1ZSwid2lwZWRUaW1lc3RhbXAiOm51bGwsImRldmljZURpc3BsYXlOYW1lIjoiaVBob25lIDVzIiwicHJzSWQiOm51bGwsImF1ZGlvQ2hhbm5lbHMiOltdLCJsb2NhdGlvbkNhcGFibGUiOnRydWUsImJhdHRlcnlTdGF0dXMiOiJDaGFyZ2VkIiwidHJhY2tpbmdJbmZvIjpudWxsLCJuYW1lIjoi5LmF55Sw55yf5a+bIiwiaXNNYWMiOmZhbHNlLCJ0aGlzRGV2aWNlIjpmYWxzZSwiZGV2aWNlQ2xhc3MiOiJpUGhvbmUiLCJsb2NhdGlvbiI6eyJpc09sZCI6ZmFsc2UsImlzSW5hY2N1cmF0ZSI6ZmFsc2UsImFsdGl0dWRlIjowLjAsInBvc2l0aW9uVHlwZSI6IkdQUyIsImxhdGl0dWRlIjozNS43MjM4NzA5MzIxNTc4MiwiZmxvb3JMZXZlbCI6MCwiaG9yaXpvbnRhbEFjY3VyYWN5IjoxMC4wLCJsb2NhdGlvblR5cGUiOm51bGwsInRpbWVTdGFtcCI6MTQ5MTc4NTIzNjc0MiwibG9jYXRpb25GaW5pc2hlZCI6dHJ1ZSwidmVydGljYWxBY2N1cmFjeSI6MC4wLCJsb25naXR1ZGUiOjEzOS44MjA4NDk5MzI4NjA0fSwiZGV2aWNlTW9kZWwiOiI1cy1lMWU0ZTMtZDdkOWQ4IiwibWF4TXNnQ2hhciI6MTYwLCJkYXJrV2FrZSI6ZmFsc2UsInJlbW90ZVdpcGUiOm51bGx9XSwic3RhdHVzQ29kZSI6IjIwMCJ9
+    http_version:
+  recorded_at: Mon, 10 Apr 2017 00:49:02 GMT
+recorded_with: VCR 3.0.3

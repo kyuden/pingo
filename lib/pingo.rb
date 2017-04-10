@@ -1,20 +1,18 @@
+# frozen_string_literal: true
+
 require "pingo/version"
 require "pingo/cli"
 require "json"
 require "typhoeus"
 
 module Pingo
-  class Pingo
-    INIT_CLIENT = 'initClient'
-    PLAY_SOUND  = 'playSound'
+  class Client
+    INIT_CLIENT = 'initClient'.freeze
+    PLAY_SOUND  = 'playSound'.freeze
 
     class << self
       def run(model_name)
-        new(model_name).instance_eval do
-          partition  = request_partition
-          device_ids = request_device_ids(partition)
-          request_sound(partition, device_ids)
-        end
+        new(model_name).sound!
       end
     end
 
@@ -24,36 +22,33 @@ module Pingo
       @password = ENV['APPLE_PASSWORD']
     end
 
+    def sound!
+      device_ids.each { |device_id| post(PLAY_SOUND, generate_body(device_id)) }
+    end
+
+    def device_ids
+      response = post(INIT_CLIENT)
+      raise "#{response.response_code}:#{response.status_message }" unless response.success?
+      parse_device_ids(response.body)
+    end
+
     private
-      def request_partition
-        post(INIT_CLIENT).headers['X-Apple-MMe-Host']
+
+      def parse_device_ids(body)
+        target_contents(body).map { |content| content["id"] }
       end
 
-      def request_device_ids(partition)
-        raise "partition is nil" unless partition
-        parse_device_ids(post(INIT_CLIENT, partition))
+      def target_contents(body)
+        target = contents(body).find_all { |content| match_device?(content) }
+        target.empty? ? raise("Not found your device(iPhone#{@model_name})") : target
       end
 
-      def parse_device_ids(data)
-        target_contents(data).map { |content| content["id"] }
-      end
-
-      def target_contents(data)
-        contents(data).find_all { |content| match_device?(content) }
-      end
-
-      def contents(data)
-        JSON.parse(data.body)['content']
+      def contents(body)
+        JSON.parse(body)['content']
       end
 
       def match_device?(params)
         params['deviceDisplayName'] =~ /#{@model_name}$/i
-      end
-
-      def request_sound(partition, device_ids)
-        raise "partition is nil" unless partition
-        raise "device id is nil" if Array(device_ids).empty?
-        Array(device_ids).map { |device_id| post(PLAY_SOUND, partition, generate_body(device_id)) }
       end
 
       def generate_body(device_id)
@@ -72,8 +67,8 @@ module Pingo
         }
       end
 
-      def post(mode, partition="fmipmobile.icloud.com", body=nil)
-        Typhoeus::Request.post(uri(mode, partition),
+      def post(type, body=nil)
+        Typhoeus::Request.post(uri(type),
                                userpwd: "#{@username}:#{@password}",
                                headers: post_headers,
                                followlocation: true,
@@ -94,8 +89,8 @@ module Pingo
           }
       end
 
-      def uri(mode, partition)
-        "https://#{partition}/fmipservice/device/#{@username}/#{mode}"
+      def uri(type)
+        "https://fmipmobile.icloud.com/fmipservice/device/#{@username}/#{type}"
       end
   end
 end
