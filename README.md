@@ -1,4 +1,4 @@
-# Pingo [![Gem Version](https://badge.fury.io/rb/pingo.svg)](http://badge.fury.io/rb/pingo) [![Code Climate](https://codeclimate.com/github/Kyuden/pingo/badges/gpa.svg)](https://codeclimate.com/github/Kyuden/pingo) [![wercker status](https://app.wercker.com/status/8fc989959ae4630aef746364c6ead94f/m/master "wercker status")](https://app.wercker.com/project/bykey/8fc989959ae4630aef746364c6ead94f)
+# Pingo [![Gem Version](https://badge.fury.io/rb/pingo.svg)](http://badge.fury.io/rb/pingo) [![Code Climate](https://codeclimate.com/github/Kyuden/pingo/badges/gpa.svg)](https://codeclimate.com/github/Kyuden/pingo) 
 
 <p><img width="400"src="http://www.fastpic.jp/images.php?file=8622347177.jpg"></p>
 Pingo provide a scatterbrain with a `pingo` command of sounding your iphone.
@@ -11,7 +11,7 @@ Install it yourself as:
 
 ## Usage
 
-Set APPLE_ID and APPLE_PASSWORD in environment variables. 
+Set APPLE_ID and APPLE_PASSWORD in environment variables.
 
 ```bash
 # Set it in .zshrc, .bashrc etc...
