@@ -102,6 +102,8 @@ func (cli *CLI) Run(args []string) int {
 		return ExitRequestSoundError
 	}
 
+	cli.PrintSuccessMessage()
+
 	return ExitOK
 }
 
@@ -137,6 +139,20 @@ func (cli *CLI) parseArgs(args []string) (*AppleAccount, error) {
 	}
 
 	return &AppleAccount{ID: appleID, Pass: applePass, ModelName: modelName}, nil
+}
+
+func (c *CLI) PrintSuccessMessage() {
+	fmt.Println(`
+	    888888ba  oo
+	    88    8b
+	   a88aaaa8P  dP 88d888b. .d8888b. .d8888b.
+	    88        88 88    88 88    88 88    88
+	    88        88 88    88 88.  .88 88.  .88
+	    dP        dP dP    dP .8888P88  88888P
+	                               .88
+	                           d8888P
+	`)
+	return
 }
 
 type Client struct {
