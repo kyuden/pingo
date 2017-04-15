@@ -7,7 +7,15 @@ Pingo provide a scatterbrain with a `pingo` command of sounding your iphone.
 
 Install it yourself as:
 
-    $ gem install pingo
+```bash
+$ gem install pingo
+```
+
+If you've done Go development before and your $GOPATH/bin directory is already in your PATH, this is an alternative installation method that fetches `pingo` into your GOPATH and builds it automatically:
+
+```
+$ go get github.com/kyuden/pingo
+```
 
 ## Usage
 
